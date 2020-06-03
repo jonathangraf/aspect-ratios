@@ -3,6 +3,8 @@
   Responsive aspect-ratio issue
 </h1>
 
+The affected code is found in `components/image.js`
+
 ## How to recreate the issue
 
 1.  **Build the site!**
@@ -29,7 +31,7 @@
 
     For reference look at the video below. It shows the image ratio as they should be, after reloading the issue is apparent immediatly. 
 
-    When inspecting the element, the aspect-ratio set with the padding-bottom is the ratio of the desktop vesion.
+    When inspecting the element, the aspect-ratio set with the padding-bottom is the ratio of the desktop version.
 
 [![Demonstration](http://img.youtube.com/vi/XpqRRe8UrJo/0.jpg)](http://www.youtube.com/watch?v=XpqRRe8UrJo "")
 
