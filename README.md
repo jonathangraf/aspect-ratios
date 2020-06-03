@@ -27,7 +27,7 @@
 
     The issue shows when loading on a mobile device or a browser with a viewport-width smaller than 678px (the configuration of the media query).
 
-    For reference look at the videa below. It shows the image ratio as they should be, after reloading the issue is apparent immediatly. 
+    For reference look at the video below. It shows the image ratio as they should be, after reloading the issue is apparent immediatly. 
 
     When inspecting the element, the aspect-ratio set with the padding-bottom is the ratio of the desktop vesion.
 
