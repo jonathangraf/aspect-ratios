@@ -14,19 +14,38 @@ import Img from "gatsby-image"
  */
 
 const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  const {desktopHero, mobileHero} = useStaticQuery(graphql`
+		query {
+			desktopHero: file(relativePath: {eq: "home_desktop.jpg"}) {
+				childImageSharp {
+					fluid(maxWidth: 1920) {
+						...GatsbyImageSharpFluid
+						}
+					}
+				}
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+			mobileHero: file(relativePath: {eq: "home_mobile.jpg"}) {
+				childImageSharp {
+					fluid(maxWidth: 768) {
+						...GatsbyImageSharpFluid
+						}
+				}
+			}
+		}
+	`);
+	
+	return (
+		<Img 
+			fluid={[
+				mobileHero.childImageSharp.fluid, // 2x3 aspect ratio
+				{
+					...desktopHero.childImageSharp.fluid, // 16x9 aspect ratio
+					media: '(min-width: 769px)'
+				}
+      ]}
+			placeholderStyle={{ background: "#2D2A32" }} 
+		/>
+	);
 }
 
 export default Image
